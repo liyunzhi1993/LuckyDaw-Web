@@ -1,0 +1,78 @@
+﻿body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+body {
+    background: #fff url(/Images/white_brick_wall.png);
+    font: 15px "Helvetica Neue",Calibri,Helvetica,Arial,sans-serif;
+    color: #666;
+    padding: 0;
+    margin: 0;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+select, input, img, select {
+    vertical-align: middle;
+}
+
+input {
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+    a:hover {
+        color: #c00;
+        text-decoration: none;
+    }
+
+.clear {
+    clear: both;
+}
+
+/* 大转盘样式 */
+.banner {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+    /*.banner .turnplate{display:block;width:100%;position:relative;}*/
+    .banner .turnplate {
+        display: block;
+        position: relative;
+    }
+        /*.banner .turnplate canvas.item{width:100%;}*/
+        .banner .turnplate img.pointer {
+            position: absolute;
+            left: 34.4%;
+            top: 23.2%;
+        }
+
+.red, h3 {
+    color: #B31B21;
+    font-weight: bold;
+}
+
+.photo {
+    width: 100px;
+}
+
+.mengceng {
+    opacity: 0.5;
+}

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LuckyDrawModelStoreContainer" CdmEntityContainer="LuckyDrawEntities">
+    <EntitySetMapping Name="PhotoSets">
+      <EntityTypeMapping TypeName="LuckyDrawModel.PhotoSet">
+        <MappingFragment StoreEntitySet="PhotoSet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmallSets">
+      <EntityTypeMapping TypeName="LuckyDrawModel.SmallSet">
+        <MappingFragment StoreEntitySet="SmallSet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="num" ColumnName="num" />
+          <ScalarProperty Name="color" ColumnName="color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

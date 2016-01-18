@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "照片抽奖";
+}
+<script src="@Url.Content("~/Scripts/Home/photoindex.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jslottery.js")" type="text/javascript"></script>
+<body style="overflow-x: hidden;" ng-app="photoindex" ng-controller="photoindexCtrl">
+    <div class="container">
+         <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <h1>照片抽奖 xxxxx年会抽奖</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div style="height: 20px;"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2" ng-repeat="x in photosets" on-finish-render-filters>
+                    <img  id="{{$index+1}}"  src="{{x.url}}" class="img-responsive img-circle photo img-cell">
+                <p class="text-center">{{x.name}}</p>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-xs-4">
+                <button type="button" class="btn btn-danger btn-sm" ng-click="photodraw()">开始抽奖</button>
+                <a class="btn btn-danger btn-sm" href="/Home/PhotoSetting">上传照片</a>
+                <a class="btn btn-danger btn-sm" href="/Home/Index">转盘抽奖</a>
+            </div>
+        </div>
+    </div>
+</body>
