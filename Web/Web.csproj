@@ -128,6 +128,8 @@
   <ItemGroup>
     <Content Include="Content\evol.colorpicker.min.css" />
     <Content Include="Content\jquery-confirm.css" />
+    <Content Include="Content\jquery.Jcrop.min.css" />
+    <Content Include="Scripts\jquery.Jcrop.min.js" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
