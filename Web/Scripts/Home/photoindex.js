@@ -18,10 +18,11 @@ var app = angular.module('photoindex', []).controller('photoindexCtrl', function
        });
     }
     function photodraw() {
-        jslottery.options.stop_position = Math.floor(Math.random() * 12 + 1);
+        var ps= Math.floor(Math.random() * imgcount + 1);
+        jslottery.options.stop_position = ps;
         jslottery.options.speed = Math.floor(Math.random() * 200 + 300);
-        jslottery.options.speed_up_position = Math.floor(Math.random() * 6 + 1);
-        jslottery.options.speed_down_position = Math.floor(Math.random() * 6 + 1);
+        jslottery.options.speed_up_position = Math.floor(Math.random() * (imgcount/2) + 1);
+        jslottery.options.speed_down_position = Math.floor(Math.random() * (imgcount/2) + 1);
         jslottery.options.speedUp = Math.floor(Math.random() * 30 + 20);
         jslottery.options.speedDown = Math.floor(Math.random() * 100 + 600);
         jslottery.options.total_circle = Math.floor(Math.random() * 5 + 2);
@@ -42,12 +43,13 @@ app.directive('onFinishRenderFilters', function ($timeout) {
 });
 
 function loadDraw() {
+    var ps= Math.floor(Math.random() * imgcount + 1);
      jslottery = new Jslottery({
         scroll_dom: 'img-cell',
         scroll_dom_css_value: '/Images/houzi.jpg',
         scroll_dom_attr: 'id',
         scroll_dom_css: 'src',
-        start_position: Math.floor(Math.random() * imgcount + 1),
+        start_position:ps,
         callback: function (data) {
             $.alert({
                 title: '你真棒',

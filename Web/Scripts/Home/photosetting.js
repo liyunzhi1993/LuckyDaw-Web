@@ -53,15 +53,17 @@ var app = angular.module('photoset', []).controller('photosetCtrl', function ($s
     }
 
     function insertPhotoSet() {
+        toastr.success("提交中..请稍后");
         var options = {
             type: "POST",
             url: '/Home/InsertPhotoSet',
             data:{name:$scope.name},
             success: function () {
+                toastr.success("提交成功");
                 getPhotoSetList();
             },
             error: function () {
-                toastr.error("上传失败");
+                toastr.error("提交失败T T");
             }
         };
         $('#form').ajaxSubmit(options);
@@ -99,6 +101,8 @@ function insertPhoto() {
         success: function (data) {
             toastr.success("上传成功，请裁剪图片");
             path = data;
+            $("#jcrimg").width("");
+            $("#jcrimg").height("");
             $("#jcrimg").attr("src", path);
             $("#jcrimg").Jcrop({
                 aspectRatio: 1,
@@ -126,4 +130,5 @@ function saveCaijian()
     $("[name=y2]").val(jcrop_api.tellSelect().y2);
     $("[name=path]").val(path);
     $('#example').modal('hide');
+    jcrop_api.destroy()
 }

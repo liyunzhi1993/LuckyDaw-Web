@@ -172,9 +172,9 @@ namespace Web.Controllers
         public string InsertPhotoSet(string name, string path, int x, int y, int x2, int y2)
         {
             Bitmap bm = new Bitmap(System.Web.HttpContext.Current.Server.MapPath(path));
-            Bitmap bmpOut = new Bitmap(x2-x, y2-y, PixelFormat.Format24bppRgb);
+            Bitmap bmpOut = new Bitmap((x2 - x), (y2 - y), PixelFormat.Format24bppRgb);
             Graphics g = Graphics.FromImage(bmpOut);
-            g.DrawImage(bm, new Rectangle(0, 0, x2-x, y2-y), new Rectangle(x, y, x2-x, y2-y), GraphicsUnit.Pixel);
+            g.DrawImage(bm, new Rectangle(0, 0, (x2 - x), (y2 - y)), new Rectangle(x, y , (x2 - x) , (y2 - y)), GraphicsUnit.Pixel);
             Random rnd = new Random();
             int num = rnd.Next(5000, 1000000);
             string newpath = "/Data/" + num.ToString() + ".jpg";
